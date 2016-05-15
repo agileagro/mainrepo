@@ -1,6 +1,8 @@
 package com.agile.servlets;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.naming.InitialContext;
@@ -50,16 +52,22 @@ public class UserLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		@SuppressWarnings("unused")
 		InitialContext ctx;
+		@SuppressWarnings("unused")
 		DataSource ds;
+		Connection local_oracle_connection = null;
 		int db_response = 0;
 		
-		UserLoginDAO new_login_requrest = null;
+		UserLoginDAO new_login_requrest = new UserLoginDAO();
 		
 		try {
-			ctx = new InitialContext();
+			/*ctx = new InitialContext();
 			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/DefaultDB");
-			new_login_requrest = new UserLoginDAO(ds);
+			new_login_requrest = new UserLoginDAO(ds);*/ // Use this snippet for HCP
+			local_oracle_connection = oracle_connector();
+			
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			response.sendRedirect("server_error.jsp");
@@ -69,7 +77,7 @@ public class UserLogin extends HttpServlet {
 		String passcode = request.getParameter("agropass");
 		
 		try {
-			db_response = new_login_requrest.checkUser(username, passcode);
+			db_response = new_login_requrest.checkUser(username, passcode,local_oracle_connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			response.sendRedirect("server_error.jsp");
@@ -92,5 +100,15 @@ public class UserLogin extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
-
+	
+	
+	public Connection oracle_connector() throws ClassNotFoundException, SQLException
+	{
+		Connection new_oracle_connection = null;
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		new_oracle_connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "morpheus");
+		
+		return new_oracle_connection;
+	}
 }

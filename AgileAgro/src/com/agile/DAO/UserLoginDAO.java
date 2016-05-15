@@ -4,14 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.sql.DataSource;
-
 import com.agile.resources.User;
 
 public class UserLoginDAO {
 	
-	private DataSource dataSource;
+	/*private DataSource dataSource;
 	
 	public UserLoginDAO(DataSource newDataSource) throws SQLException
 	{
@@ -24,16 +21,16 @@ public class UserLoginDAO {
 
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
-	}
+	}*/ // Use datasource for HCP
 	
-	public int checkUser(String username,String passcode) throws SQLException
+	public int checkUser(String username,String passcode,Connection local_connection) throws SQLException
 	{
 		int return_status = 0; // 0 for invalid user, 1 for registered, 500 for internal error.
-		Connection connection = dataSource.getConnection();
+		Connection connection = local_connection;  //DataSource.getCOnnection() for HCP
     	PreparedStatement pstmt = null;
     	
     	try {
-			pstmt = connection.prepareStatement("SELECT * FROM USER WHERE username LIKE '" + username + "' AND PASSCODE LIKE '" + passcode + "'");
+			pstmt = connection.prepareStatement("SELECT * FROM users WHERE username LIKE '" + username + "' AND PASSCODE LIKE '" + passcode + "'");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			return_status = 500;
@@ -50,6 +47,7 @@ public class UserLoginDAO {
     	
     	if(rs.next())
     	{
+    
     		User logged_user = new User();
     		
     		logged_user.setInstance_id(rs.getString(1));
@@ -64,6 +62,7 @@ public class UserLoginDAO {
     	
     	else
     	{
+    		
     		return_status = 0;
 			return return_status;
     	}

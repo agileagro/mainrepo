@@ -18,7 +18,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-toggle"></span>
                 </button>
-                <a class="navbar-brand" href="#">AgileAgro | Administration Console</a>
+                <a class="navbar-brand" href="console_home.jsp">AgileAgro | Administration Console</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -28,7 +28,7 @@
                             <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span>
                         </a>
                         <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a>
+                            <li><a href="admin_logout.jsp"><i class="glyphicon glyphicon-lock"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
@@ -52,14 +52,14 @@
                 <h3><i class="glyphicon glyphicon-briefcase"></i> Settings</h3>
                 <hr>
 
-                <ul class="nav nav-stacked">
-                    <li><a href="console_home.html" ><i class="glyphicon glyphicon-home"></i> Admin Home</a>
+                  <ul class="nav nav-stacked">
+                    <li><a href="console_home.jsp" ><i class="glyphicon glyphicon-home"></i> Admin Home</a>
                     </li>
-                    <li><a href="instances.html"><i class="glyphicon glyphicon-link"></i> Instances</a>
+                    <li><a href="instances.jsp"><i class="glyphicon glyphicon-link"></i> Instances</a>
                     </li>
-					<li><a href="create_instance.html"><i class="glyphicon glyphicon-new-window"></i> Create Instance</a>
+					<li><a href="create_instance.jsp"><i class="glyphicon glyphicon-new-window"></i> Create Instance</a>
                     </li>
-					<li><a href="admin_login.html"><i class="glyphicon glyphicon-off"></i> Logout</a>
+					<li><a href="admin_logout.jsp"><i class="glyphicon glyphicon-off"></i> Logout</a>
                     </li>
 					
                 </ul>

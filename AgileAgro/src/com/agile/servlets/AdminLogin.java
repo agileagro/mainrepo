@@ -15,19 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import com.agile.DAO.UserLoginDAO;
+import com.agile.DAO.AdminLoginDAO;
 
 /**
- * Servlet implementation class UserLogin
+ * Servlet implementation class AdminLogin
  */
-@WebServlet(description = "login servlet", urlPatterns = { "/UserLogin" })
-public class UserLogin extends HttpServlet {
+@WebServlet(description = "servlet to authorize admin", urlPatterns = { "/AdminLogin" })
+public class AdminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserLogin() {
+    public AdminLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -53,6 +53,7 @@ public class UserLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		
 		@SuppressWarnings("unused")
 		InitialContext ctx;
 		@SuppressWarnings("unused")
@@ -60,7 +61,7 @@ public class UserLogin extends HttpServlet {
 		Connection local_oracle_connection = null;
 		int db_response = 0;
 		
-		UserLoginDAO new_login_requrest = new UserLoginDAO();
+		AdminLoginDAO new_admin_login = new AdminLoginDAO();
 		
 		try {
 			/*ctx = new InitialContext();
@@ -74,11 +75,11 @@ public class UserLogin extends HttpServlet {
 			response.sendRedirect("server_error.jsp");
 		}
 		
-		String username = request.getParameter("agrouser");
-		String passcode = request.getParameter("agropass");
+		String admin_name = request.getParameter("admin_name");
+		String admin_passcode = request.getParameter("admin_passcode");
 		
 		try {
-			db_response = new_login_requrest.checkUser(username, passcode,local_oracle_connection);
+			db_response = new_admin_login.checkAdmin(admin_name, admin_passcode,local_oracle_connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			response.sendRedirect("server_error.jsp");
@@ -86,24 +87,16 @@ public class UserLogin extends HttpServlet {
 		
 		if(db_response == 1)
 		{
-			HttpSession user_session = request.getSession();
-            user_session.setAttribute("logged_user", username);
-			response.sendRedirect("cropoverview.jsp");
+			HttpSession admin_session = request.getSession();
+            admin_session.setAttribute("logged_admin", admin_name);
+			response.sendRedirect("admin/console_home.jsp");
 		}
 		else
 		{
-			response.sendRedirect("login_fail.jsp");
+			response.sendRedirect("admin/admin_login_fail.jsp");
 		}
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-	
 	
 	public Connection oracle_connector() throws ClassNotFoundException, SQLException
 	{
@@ -114,4 +107,5 @@ public class UserLogin extends HttpServlet {
 		
 		return new_oracle_connection;
 	}
+
 }

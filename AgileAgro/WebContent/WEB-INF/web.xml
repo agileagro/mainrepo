@@ -7,18 +7,20 @@
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>UserLogin</display-name>
     <servlet-name>UserLogin</servlet-name>
     <servlet-class>com.agile.servlets.UserLogin</servlet-class>
   </servlet>
- 
-  
-    <resource-ref>
+    <servlet>
+    <description></description>
+    <display-name>AdminLogin</display-name>
+    <servlet-name>AdminLogin</servlet-name>
+    <servlet-class>com.agile.servlets.AdminLogin</servlet-class>
+  </servlet>
+  <resource-ref>
     <res-ref-name>jdbc/DefaultDB</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
   </resource-ref>
-  
 </web-app>

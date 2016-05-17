@@ -23,16 +23,16 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form" action="console_home.html">
+                        <form id="loginform" class="form-horizontal" role="form" action="../AdminLogin" method="post">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required>                                        
+                                        <input id="login-username" type="text" class="form-control" name="admin_name" value="" placeholder="username or email" required>                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required>
+                                        <input id="login-password" type="password" class="form-control" name="admin_passcode" placeholder="password" required>
                                     </div>
                                     
 

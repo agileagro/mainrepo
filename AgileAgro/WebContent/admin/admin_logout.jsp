@@ -34,7 +34,7 @@
 						class="alert alert-danger col-sm-12"></div>
 
 					<form id="loginform" class="form-horizontal" role="form"
-						action="console_home.jsp">
+						action="admin_login.jsp">
 						
 						<div class="alert alert-info">
 							<strong>You have successfully logged out of the Agro Admin Console!</strong> 

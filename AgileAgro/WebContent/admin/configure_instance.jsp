@@ -11,6 +11,11 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<%
+		if (session.getAttribute("logged_admin") == null) {
+			response.sendRedirect("admin_login.jsp");
+		}
+	%>
     <!-- Navbar -->
     <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
         <div class="container">

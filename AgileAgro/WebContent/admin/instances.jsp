@@ -106,7 +106,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><a href="configure_instance.html">AG_201601501</a></td>
+                                <td><a href="configure_instance.jsp">AG_201601501</a></td>
                                 <td>Uniliver Main</td>
 								<td>India</td>
                                 <td>2600Ha</td>

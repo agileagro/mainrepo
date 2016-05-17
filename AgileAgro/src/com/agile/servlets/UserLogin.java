@@ -85,7 +85,7 @@ public class UserLogin extends HttpServlet {
 		
 		if(db_response == 1)
 		{
-			response.getWriter().println("<script>alert('Success!'); window.location = 'login.jsp';</script>");
+			response.sendRedirect("cropoverview.jsp");
 		}
 		else
 		{

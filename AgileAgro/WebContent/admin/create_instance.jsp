@@ -91,11 +91,22 @@
                         To setup a new instance, start by providing the details below. 
                     </div>
                   
-					<form class="form-horizontal">
+					<form class="form-horizontal" method="post" action="newinstance">
 		<fieldset>
 
 <!-- Form Name -->
 <legend></legend>
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext">Instance ID</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">AG_</span>
+      <input id="prependedtext" name="instanceid" class="form-control" placeholder="Instance ID" type="text">
+    </div>
+    <p class="help-block">Instance ID is a unique id provisioned for the instance</p>
+  </div>
+</div>
 
 <!-- Text input-->
 <div class="form-group">
@@ -351,7 +362,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="sectornumber">Number of sectors </label>  
   <div class="col-md-4">
-  <input id="sectornumber" name="sectornumber" type="number" placeholder="Sectors" class="form-control input-md" required="">
+  <input id="sectornumber" name="sectornumber" min ="1" type="number" placeholder="Sectors" class="form-control input-md" required="">
   <span class="help-block">Enter the number of sectors</span>  
   </div>
 </div>

@@ -107,11 +107,11 @@ public class UserLogin extends HttpServlet {
 	
 	public Connection oracle_connector() throws ClassNotFoundException, SQLException
 	{
-		Connection new_oracle_connection = null;
+		Class.forName("com.mysql.jdbc.Driver");  
+		  
+		Connection mysql_con=DriverManager.getConnection(  
+		"jdbc:mysql://localhost:3306/agile_agro","root","morpheus");  
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		new_oracle_connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "morpheus");
-		
-		return new_oracle_connection;
+		return mysql_con;
 	}
 }

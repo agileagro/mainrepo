@@ -6,13 +6,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.naming.InitialContext;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import com.agile.DAO.InstanceDAO;
@@ -53,7 +51,7 @@ public class newinstance extends HttpServlet {
 		InitialContext ctx;
 		@SuppressWarnings("unused")
 		DataSource ds;
-		Connection local_oracle_connection = null;
+		Connection local_db_connection = null;
 		int db_response = 0;
 		
 		Instance new_instance = new Instance();
@@ -75,7 +73,7 @@ public class newinstance extends HttpServlet {
 			/*ctx = new InitialContext();
 			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/DefaultDB");
 			new_login_requrest = new UserLoginDAO(ds);*/ // Use this snippet for HCP
-			local_oracle_connection = oracle_connector();
+			local_db_connection = db_connector();
 			
 			
 		} catch (Exception e) {
@@ -84,7 +82,7 @@ public class newinstance extends HttpServlet {
 		}
 		
 		try {
-			db_response = new_instance_request.addNewInstance(new_instance, local_oracle_connection);
+			db_response = new_instance_request.addNewInstance(new_instance, local_db_connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			response.sendRedirect("server_error.jsp");
@@ -103,14 +101,14 @@ public class newinstance extends HttpServlet {
 		
 	}
 	
-	public Connection oracle_connector() throws ClassNotFoundException, SQLException
+	public Connection db_connector() throws ClassNotFoundException, SQLException
 	{
-		Connection new_oracle_connection = null;
+		Class.forName("com.mysql.jdbc.Driver");  
+		  
+		Connection mysql_con=DriverManager.getConnection(  
+		"jdbc:mysql://localhost:3306/agile_agro","root","morpheus");  
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		new_oracle_connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "morpheus");
-		
-		return new_oracle_connection;
+		return mysql_con;
 	}
 
 }

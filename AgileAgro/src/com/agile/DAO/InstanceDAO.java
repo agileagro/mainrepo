@@ -1,7 +1,9 @@
 package com.agile.DAO;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.agile.resources.Instance;
@@ -41,6 +43,21 @@ public class InstanceDAO {
 			return return_status;
 		}
     								
+	}
+	
+	public ResultSet getAllInstances() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.jdbc.Driver");  
+		Connection db_connection = DriverManager.getConnection(  
+				"jdbc:mysql://localhost:3306/agile_agro","root","morpheus");
+		PreparedStatement pstmt = null;
+		ResultSet instances = null;
+		
+		pstmt = db_connection.prepareStatement("SELECT * FROM instance");
+		instances = pstmt.executeQuery();
+		
+		
+		return instances;
 	}
 
 }

@@ -34,14 +34,11 @@ public class AdminLoginDAO {
     	
     	if(rs.next())
     	{
-    
+    		
     		Admin logged_admin = new Admin();
     		
     		logged_admin.setAdmin_name(rs.getString(1));
     		logged_admin.setAdmin_passcode(rs.getString(2));
-    		logged_admin.setAdmin_id(rs.getString(3));
-    		
-    		
     		return_status = 1;
 			return return_status;
     		
@@ -49,7 +46,7 @@ public class AdminLoginDAO {
     	
     	else
     	{
-    		
+
     		return_status = 0;
 			return return_status;
     	}

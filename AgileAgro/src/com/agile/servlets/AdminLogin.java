@@ -58,8 +58,9 @@ public class AdminLogin extends HttpServlet {
 		InitialContext ctx;
 		@SuppressWarnings("unused")
 		DataSource ds;
-		Connection local_oracle_connection = null;
+		Connection local_db_connection = null;
 		int db_response = 0;
+		String page = null;
 		
 		AdminLoginDAO new_admin_login = new AdminLoginDAO();
 		
@@ -67,45 +68,50 @@ public class AdminLogin extends HttpServlet {
 			/*ctx = new InitialContext();
 			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/DefaultDB");
 			new_login_requrest = new UserLoginDAO(ds);*/ // Use this snippet for HCP
-			local_oracle_connection = oracle_connector();
+			local_db_connection = db_connector();
 			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			response.sendRedirect("server_error.jsp");
+			page = "server_error.jsp";
 		}
 		
 		String admin_name = request.getParameter("admin_name");
 		String admin_passcode = request.getParameter("admin_passcode");
 		
+		
 		try {
-			db_response = new_admin_login.checkAdmin(admin_name, admin_passcode,local_oracle_connection);
+			db_response = new_admin_login.checkAdmin(admin_name, admin_passcode,local_db_connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			response.sendRedirect("server_error.jsp");
+			page = "server_error.jsp";
 		}
 		
 		if(db_response == 1)
 		{
 			HttpSession admin_session = request.getSession();
             admin_session.setAttribute("logged_admin", admin_name);
-			response.sendRedirect("admin/console_home.jsp");
+			page = "admin/console_home.jsp";
+			System.out.println(db_response);
 		}
 		else
 		{
-			response.sendRedirect("admin/admin_login_fail.jsp");
+			page = "admin/admin_login_fail.jsp";
 		}
+		
+		
+		response.sendRedirect(page);
 		
 	}
 	
-	public Connection oracle_connector() throws ClassNotFoundException, SQLException
+	public Connection db_connector() throws ClassNotFoundException, SQLException
 	{
-		Connection new_oracle_connection = null;
+		Class.forName("com.mysql.jdbc.Driver");  
+		  
+		Connection mysql_con=DriverManager.getConnection(  
+		"jdbc:mysql://localhost:3306/agile_agro","root","morpheus");  
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		new_oracle_connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "morpheus");
-		
-		return new_oracle_connection;
+		return mysql_con;
 	}
 
 }

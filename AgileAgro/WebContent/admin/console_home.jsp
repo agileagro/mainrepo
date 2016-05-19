@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.agile.DAO.InstanceDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -90,29 +92,61 @@
                     <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Please select "Instances" from the menu, for configuring an existing instance.
                     </div>
-                    <table class="table table-hover">
-                        <tr>
-                            <th>#</th>
-                            <th>Instance ID</th>
-                            <th>Name</th>
-                            <th>Location</th>
-							<th>Total area</th>
-							<th>Under Surveillance</th>	
-						</tr>
-                        <thead>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>AG_201601501</td>
-                                <td>Uniliver Main</td>
-								<td>India</td>
-                                <td>2600Ha</td>
-								<td>19600Ha</td>
-								
-                            </tr>
-                        </tbody>
-                    </table>
+                   <% 
+                    
+                    	InstanceDAO instance_fetcher = new InstanceDAO();
+                    	ResultSet instances = null;
+                    	
+                    	
+                    	try
+                    	{
+                    		instances = instance_fetcher.getAllInstances();
+                    	}
+                    	catch(Exception e)
+                    	{
+                    		response.sendRedirect("../server_error.jsp");
+                    	}
+                       
+                     	
+                    out.println("<table class='table table-hover'>");
+                    
+                    if(instances == null)
+                    {
+                    	out.println("<tr><td>No Instances Defined!</td></tr>");
+                    	out.println("</table>");
+                    	
+                    }
+                    else
+                    {	
+                    	int iterator = 0;
+                    	 out.println("<thead>");
+                        out.println("<tr><th>#</th><th>Instance ID</th><th>Name</th><th>Location</th><th>Total area</th><th>Under Surveillance</th><th>Status</th></tr>");
+                        out.println("</thead>");
+                        out.println("<tbody>");
+                        while(instances.next())
+                        {
+                        	iterator++;
+                        	out.println("<tr>");
+                        	out.println("<td>" + iterator + "</td>");
+                        	out.println("<td><a href= 'configure_instance.jsp?instance=" + instances.getString(2) + "'> " + instances.getString(2) + "</a></td>");
+                        	out.println("<td>" + instances.getString(6) + "</td>");
+                        	out.println("<td>" + instances.getString(7) + "</td>");
+                        	out.println("<td>" + instances.getString(4) + " Ha</td>");
+                        	out.println("<td>" + instances.getString(5) + " Ha</td>");
+                        	
+                        	if(instances.getInt(9) == 0)
+                        	{
+                        		out.println("<td>Area Setup</td>");
+                        	}
+                        	
+                        	out.println("</tr>");
+                        }
+                        
+                        out.println("</tbody>");
+                        out.println("</table>");
+                    }   
+                    
+                    %> 
 
                 </div>
                 <!--/row-->

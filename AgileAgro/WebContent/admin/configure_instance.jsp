@@ -81,7 +81,7 @@
             <div class="col-md-8">
 
                 <!-- column 2 -->
-                <h3><i class="glyphicon glyphicon-dashboard"></i> Configure Instance - AG_201601501</h3>
+                <h3><i class="glyphicon glyphicon-dashboard"></i> Configure Instance - <% out.print(request.getParameter("instance")); %></h3>
 
                 <hr>
 

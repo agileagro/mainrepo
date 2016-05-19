@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
     <title>AgileAgro | Instances</title>
@@ -12,6 +12,7 @@
 </head>
 <body>
 	<%
+		
 		if (session.getAttribute("logged_admin") == null) {
 			response.sendRedirect("admin_login.jsp");
 		}
@@ -96,9 +97,9 @@
                     <div class="alert alert-info">
                     
 					   
-					   The instance <strong>INSTANCE_NAME</strong> has been created.
+					   The instance <strong><%= ((String)request.getParameter("ins")) %></strong> has been created.
 					   
-					   <br>Login with username <strong>USERNAME</strong> to access the AgileAgro Dashboard.
+					   <br>Login with username <strong><%= ((String)request.getParameter("username")) %></strong> to access the AgileAgro Dashboard.
 					   
 					  
                     </div>

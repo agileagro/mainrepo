@@ -91,7 +91,7 @@
                         To setup a new instance, start by providing the details below. 
                     </div>
                   
-					<form class="form-horizontal" method="post" action="newinstance">
+					<form class="form-horizontal" method="post" action="../newinstance">
 		<fieldset>
 
 <!-- Form Name -->

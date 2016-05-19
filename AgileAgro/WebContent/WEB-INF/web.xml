@@ -13,11 +13,17 @@
     <servlet-name>UserLogin</servlet-name>
     <servlet-class>com.agile.servlets.UserLogin</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>AdminLogin</display-name>
     <servlet-name>AdminLogin</servlet-name>
     <servlet-class>com.agile.servlets.AdminLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>newinstance</display-name>
+    <servlet-name>newinstance</servlet-name>
+    <servlet-class>com.agile.servlets.newinstance</servlet-class>
   </servlet>
   <resource-ref>
     <res-ref-name>jdbc/DefaultDB</res-ref-name>

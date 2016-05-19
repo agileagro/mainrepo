@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body style="background-image:url('http://res.cloudinary.com/ddgydqg8v/image/upload/v1444589525/bg001_fkawcq.jpg');">	
+<body style="background-image:url('http://res.cloudinary.com/ddgydqg8v/image/upload/v1463668807/background02_a2n8vv.jpg');">	
     <div class="container">    
         <div id="loginbox" style="margin-top:200px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >

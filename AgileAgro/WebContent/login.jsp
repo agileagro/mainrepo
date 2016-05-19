@@ -29,13 +29,13 @@
             <form action="UserLogin" method="post">
               <h1>AgileAgro | Login</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Agro Instance ID" required="" />
+                <input type="text"  name="instance_id" class="form-control" placeholder="Agro Instance ID" required />
               </div>
               <div>
-                <input type="text" name ="agrouser" class="form-control" placeholder="Username" required="" />
+                <input type="text" name ="agrouser" class="form-control" placeholder="Username" required/>
               </div>
               <div>
-                <input type="password" name="agropass" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="agropass" class="form-control" placeholder="Password" required/>
               </div>
               <div>
                 <input id ="submitbtn" class="btn btn-default submit" type="submit" value="Log in">

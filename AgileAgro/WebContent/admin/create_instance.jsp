@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
     <title>AgileAgro | Instances</title>
@@ -87,7 +87,7 @@
 
                 <div class="row">
                     <!-- center left-->
-                    <div class="alert alert-info">
+                    <div class="alert alert-success">
                         To setup a new instance, start by providing the details below. 
                     </div>
                   
@@ -96,6 +96,10 @@
 
 <!-- Form Name -->
 <legend></legend>
+
+<div class="panel panel-info">
+      <div class="panel-heading">Basic Instance Info</div>
+      <div class="panel-body">
 <!-- Prepended text-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="prependedtext">Instance ID</label>
@@ -333,6 +337,15 @@
 
 <!-- Text input-->
 <div class="form-group">
+  <label class="col-md-4 control-label" for="location">Location</label>  
+  <div class="col-md-4">
+  <input id="location" name="location" type="text" placeholder="Location" class="form-control input-md" required="">
+  <span class="help-block">Enter exact location name</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
   <label class="col-md-4 control-label" for="organisationname">Organisation Name </label>  
   <div class="col-md-4">
   <input id="organisationname" name="organisationname" type="text" placeholder="Official organisation name" class="form-control input-md" required="">
@@ -340,6 +353,12 @@
   </div>
 </div>
 
+</div></div>
+
+
+<div class="panel panel-info">
+      <div class="panel-heading">Area and Knowledge Base</div>
+      <div class="panel-body">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="totalarea">Total Area</label>  
@@ -369,15 +388,6 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="location">Location</label>  
-  <div class="col-md-4">
-  <input id="location" name="location" type="text" placeholder="Location" class="form-control input-md" required="">
-  <span class="help-block">Enter exact location name</span>  
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
   <label class="col-md-4 control-label" for="defaultuser">Default username</label>  
   <div class="col-md-4">
   <input id="defaultuser" name="defaultuser" type="text" placeholder="usernamce" class="form-control input-md" required="">
@@ -401,6 +411,96 @@
     <input id="kbase" name="kbase" class="input-file" type="file">
   </div>
 </div>
+</div>
+</div>
+
+<div class="panel panel-info">
+      <div class="panel-heading">Sensor Monitoring Settings</div>
+      <div class="panel-body">
+	  
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Sensors">Sensor Monitoring</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Sensors-0">
+      <input type="checkbox" name="Sensors" id="Sensors-0" value="1" checked disabled>
+      Temperature
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="Sensors-1">
+      <input type="checkbox" name="Sensors" id="Sensors-1" value="2" checked disabled>
+      Moisture
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="Sensors-2">
+      <input type="checkbox" name="Sensors" id="Sensors-2" value="3" checked disabled>
+      Humidity
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="Sensors-3">
+      <input type="checkbox" name="Sensors" id="Sensors-3" value="4">
+      Light intensity
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="aciditysensing">Soil Acidity Sensing</label>
+  <div class="col-md-4">
+    <select id="aciditysensing" name="aciditysensing" class="form-control">
+      <option value="1">Enabled</option>
+      <option value="2">Disabled</option>
+    </select>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="mineral ">Multiple Checkboxes</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="mineral -0">
+      <input type="checkbox" name="mineral " id="mineral -0" value="1">
+      Soil Potassium Content
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="mineral -1">
+      <input type="checkbox" name="mineral " id="mineral -1" value="2">
+      Sodium Content
+    </label>
+	</div>
+  <div class="checkbox">
+    <label for="mineral -2">
+      <input type="checkbox" name="mineral " id="mineral -2" value="3">
+      Nitrogen Content
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pestcontrol">Digital Pest Monitoring</label>
+  <div class="col-md-4">
+    <select id="pestcontrol" name="pestcontrol" class="form-control">
+      <option value="1">Disabled</option>
+      <option value="2">Monitor Only</option>
+      <option value="3">Monitor With Reporting</option>
+    </select>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+
 
 <!-- Button -->
 <div class="form-group">

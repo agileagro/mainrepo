@@ -23,14 +23,14 @@ public class UserLoginDAO {
 		this.dataSource = dataSource;
 	}*/ // Use datasource for HCP
 	
-	public int checkUser(String username,String passcode,Connection local_connection) throws SQLException
+	public int checkUser(String username,String passcode,String instance_id,Connection local_connection) throws SQLException
 	{
 		int return_status = 0; // 0 for invalid user, 1 for registered, 500 for internal error.
 		Connection connection = local_connection;  //DataSource.getCOnnection() for HCP
     	PreparedStatement pstmt = null;
     	
     	try {
-			pstmt = connection.prepareStatement("SELECT * FROM users WHERE username LIKE '" + username + "' AND PASSCODE LIKE '" + passcode + "'");
+			pstmt = connection.prepareStatement("SELECT * FROM users WHERE username LIKE '" + username + "' AND PASSCODE LIKE '" + passcode + "' and instance_id like '" + instance_id + "'");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			return_status = 500;
@@ -67,6 +67,33 @@ public class UserLoginDAO {
 			return return_status;
     	}
 		
+	}
+	
+	public int checkInstanceSetup(String instance_id,Connection local_connection) throws SQLException
+	{
+		int instance_status = 0;
+		Connection connection = local_connection;  //DataSource.getCOnnection() for HCP
+    	PreparedStatement pstmt = null;
+    	ResultSet result = null;
+		
+    	try {
+			pstmt = connection.prepareStatement("SELECT status FROM instance WHERE instance_id like '" + instance_id + "'");
+		} catch (SQLException e) {
+			return 500;
+		}
+    	
+    	result = pstmt.executeQuery();
+    	
+    	if(result.next())
+    	{
+    		instance_status = 1;
+    	}
+    	else
+    	{
+    		instance_status = 0;
+    	}
+		
+		return instance_status;
 	}
 
 }

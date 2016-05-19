@@ -59,6 +59,7 @@ public class UserLogin extends HttpServlet {
 		DataSource ds;
 		Connection local_oracle_connection = null;
 		int db_response = 0;
+		int ins_status = 0;
 		
 		UserLoginDAO new_login_requrest = new UserLoginDAO();
 		
@@ -76,9 +77,10 @@ public class UserLogin extends HttpServlet {
 		
 		String username = request.getParameter("agrouser");
 		String passcode = request.getParameter("agropass");
+		String instance_id = request.getParameter("instance_id");
 		
 		try {
-			db_response = new_login_requrest.checkUser(username, passcode,local_oracle_connection);
+			db_response = new_login_requrest.checkUser(username, passcode,instance_id,local_oracle_connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			response.sendRedirect("server_error.jsp");
@@ -86,9 +88,27 @@ public class UserLogin extends HttpServlet {
 		
 		if(db_response == 1)
 		{
-			HttpSession user_session = request.getSession();
-            user_session.setAttribute("logged_user", username);
-			response.sendRedirect("cropoverview.jsp");
+			try {
+				ins_status = new_login_requrest.checkInstanceSetup(instance_id, local_oracle_connection);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				response.sendRedirect("server_error.jsp");
+			}
+			
+			if(ins_status == 1)
+			{
+			
+				HttpSession user_session = request.getSession();
+				user_session.setAttribute("logged_user", username);
+				response.sendRedirect("cropoverview.jsp");
+			}
+			else
+			{
+				HttpSession user_session = request.getSession();
+				user_session.setAttribute("logged_user", username);
+				response.sendRedirect("sector_setup.jsp");
+				
+			}
 		}
 		else
 		{

@@ -19,6 +19,12 @@
     <servlet-name>AdminLogin</servlet-name>
     <servlet-class>com.agile.servlets.AdminLogin</servlet-class>
   </servlet>
+    <servlet>
+    <description></description>
+    <display-name>KbUpdate</display-name>
+    <servlet-name>KbUpdate</servlet-name>
+    <servlet-class>com.agile.servlets.KbUpdate</servlet-class>
+  </servlet>
   <servlet>
     <description></description>
     <display-name>newinstance</display-name>

@@ -93,7 +93,7 @@
 					
 					<!-- File Button -->
 					
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="../KbUpdate" method ="post" enctype="multipart/form-data">
 					<fieldset>
 
 					
@@ -103,7 +103,7 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="kbase">Update Knowledge base</label>
 					  <div class="col-md-4">
-						<input id="kbase" name="kbase" class="input-file" type="file">
+						<input id="file" name="file" class="input-file" type="file" required>
 					  </div>
 					</div>
 					
@@ -112,35 +112,6 @@
 					  <label class="col-md-4 control-label" for="submit"></label>
 					  <div class="col-md-4">
 						<button id="submit" name="submit" class="btn btn-info">Update</button>
-					  </div>
-					  
-					</div>
-					
-					</div>
-					</div>
-					</fieldset>
-					</form>
-					
-					 
-					<form class="form-horizontal">
-					<fieldset>
-
-					
-					<div class="panel panel-info">
-      <div class="panel-heading">Update current knowledge base</div>
-      <div class="panel-body">
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="kbase">Update Knowledge base</label>
-					  <div class="col-md-4">
-						<input id="kbase" name="kbase" class="input-file" type="file">
-					  </div>
-					</div>
-					
-						<!-- Button -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="submit"></label>
-					  <div class="col-md-4">
-						<button id="submit" name="submit" class="btn btn-info">Upload</button>
 					  </div>
 					  
 					</div>

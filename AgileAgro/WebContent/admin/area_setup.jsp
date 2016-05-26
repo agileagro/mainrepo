@@ -99,11 +99,6 @@
 					<form class="form-horizontal">
 					<fieldset>
 					
-					<%
-					for(int i=0;i<secnum;i++){
-						
-					
-					%>
 					 <div class="panel panel-info">
      				 <div class="panel-heading">Enter sector Information</div>
      				 <div class="panel-body">
@@ -171,7 +166,7 @@
 					
 					
 					</div>
-				<% } %>	
+		
 					<!-- Button -->
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="submit"></label>

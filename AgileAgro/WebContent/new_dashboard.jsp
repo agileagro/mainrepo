@@ -302,7 +302,7 @@
 															</div>
 														</div>
 														<div class="summary-footer">
-															<a class="text-uppercase">(view all)</a>
+															<a class="text-uppercase"></a>
 														</div>
 													</div>
 												</div>
@@ -326,7 +326,7 @@
 															</div>
 														</div>
 														<div class="summary-footer">
-															<a class="text-uppercase">(view all)</a>
+															
 														</div>
 													</div>
 												</div>
@@ -350,7 +350,7 @@
 															</div>
 														</div>
 														<div class="summary-footer">
-															<a class="text-uppercase">(view all)</a>
+															
 														</div>
 													</div>
 												</div>
@@ -374,7 +374,7 @@
 															</div>
 														</div>
 														<div class="summary-footer">
-															<a class="text-uppercase">(view all)</a>
+														
 														</div>
 													</div>
 												</div>
@@ -480,7 +480,7 @@
 													<a href="#" class="fa fa-times"></a>
 												</div>
 						
-												<h2 class="panel-title">Water Availability </h2>
+												<h2 class="panel-title">Water Usage Today vs Previous Day </h2>
 										
 											</header>
 											<div class="panel-body">

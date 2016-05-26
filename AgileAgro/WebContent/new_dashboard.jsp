@@ -286,7 +286,7 @@
 					
 							<div class="row">
 							<div class="col-md-6 col-lg-6 col-xl-3">
-								<section class="panel panel-featured-secondary">
+								<section class="panel panel-featured-secondary appear-animation bounceIn appear-animation-visible">
 									<div class="panel-body bg-tertiary">
 												<div class="widget-summary">
 													<div class="widget-summary-col widget-summary-col-icon">
@@ -310,7 +310,7 @@
 								</section>
 							</div>
 							<div class="col-md-6 col-lg-6 col-xl-3">
-								<section class="panel panel-featured-secondary">
+								<section class="panel panel-featured-secondary appear-animation bounceIn appear-animation-visible">
 									<div class="panel-body bg-tertiary">
 												<div class="widget-summary">
 													<div class="widget-summary-col widget-summary-col-icon">
@@ -334,7 +334,7 @@
 								</section>
 							</div>
 							<div class="col-md-6 col-lg-6 col-xl-3">
-								<section class="panel panel-featured-secondary">
+								<section class="panel panel-featured-secondary appear-animation bounceIn appear-animation-visible">
 									<div class="panel-body bg-tertiary">
 												<div class="widget-summary">
 													<div class="widget-summary-col widget-summary-col-icon">
@@ -358,7 +358,7 @@
 								</section>
 							</div>
 							<div class="col-md-6 col-lg-6 col-xl-3">
-								<section class="panel panel-featured-secondary">
+								<section class="panel panel-featured-secondary appear-animation bounceIn appear-animation-visible">
 									<div class="panel-body bg-tertiary">
 												<div class="widget-summary">
 													<div class="widget-summary-col widget-summary-col-icon">

@@ -51,6 +51,11 @@
 
 </head>
 <body>
+	<%
+		if (session.getAttribute("logged_user") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 	<section class="body">
 
 		<!-- start: header -->
@@ -117,7 +122,7 @@
 						</figure>
 						<div class="profile-info" data-lock-name="John Doe"
 							data-lock-email="johndoe@okler.com">
-							<span class="name">USERNAME</span>
+							<span class="name"><%=session.getAttribute("logged_user")%></span>
 
 						</div> <i class="fa custom-caret"></i>
 					</a>
@@ -173,6 +178,10 @@
 										class="fa fa-heart" aria-hidden="true"></i> <span>Sensor
 											Health</span>
 								</a></li>
+								<li class="nav-active"><a href="new_livestream.jsp"> <i
+										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
+											</span>
+								</a></li>
 								<li></li>
 							</ul>
 						</nav>
@@ -216,145 +225,184 @@
 					<div class="alert alert-danger ">
 						<button type="button" class="close" data-dismiss="alert"
 							aria-hidden="true">x</button>
-						
-							<strong>Critical warnings found. Please review!</strong>
-						
-					</div>
-					
-				
-				<section class="panel ">
-							<header class="panel-heading">
-								<div class="panel-actions">
-									<a href="#" class="fa fa-caret-down"></a>
-									<a href="#" class="fa fa-times"></a>
-								</div>
-						
-								<h2 class="panel-title">Detailed Alerts and Notifications</h2>
-							</header>
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table class="table table-bordered table-striped table-condensed mb-none">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Alert</th>
-												<th class="text-right">Status</th>
-												<th class="text-right">Resource</th>
-												<th class="text-right">Sector #</th>
-												<th class="text-right">Time</th>
-												<th class="text-right">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td> pH Value too High</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">Sector 1</td>
-												<td class="text-right">Sector 1</td>
-												<td class="text-right">Today</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>ARDENT LEISURE GROUP</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right"> Siemens </td>
-												<td class="text-right">2</td>
-												<td class="text-right">$1.14</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>AUSENCO LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">Yamaha</td>
-												<td class="text-right">1</td>
-												<td class="text-right">$4.01</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>ABC</td>
-												<td>ADELAIDE BRIGHTON LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">  +0.06</td>
-												<td class="text-right">2.04%</td>
-												<td class="text-right">$2.98</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>ABP</td>
-												<td>ABACUS PROPERTY GROUP</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">0.00</td>
-												<td class="text-right">0.00%</td>
-												<td class="text-right">$1.92</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>ABY</td>
-												<td>ADITYA BIRLA MINERALS LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">  +0.02</td>
-												<td class="text-right">2.00%</td>
-												<td class="text-right">$0.76</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>ACR</td>
-												<td>ACRUX LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-danger">critical</button></td>
-												<td class="text-right">  +0.01</td>
-												<td class="text-right">0.14%</td>
-												<td class="text-right">$3.70</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>ADU</td>
-												<td>ADAMUS RESOURCES LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-primary">information</button></td>
-												<td class="text-right">0.00</td>
-												<td class="text-right">0.00%</td>
-												<td class="text-right">$0.73</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>AGG</td>
-												<td>ANGLOGOLD ASHANTI LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-primary">information</button></td>
-												<td class="text-right">-0.22</td>
-												<td class="text-right">-2.74%</td>
-												<td class="text-right">$7.82</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>AGK</td>
-												<td>AGL ENERGY LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-primary">information</button></td>
-												<td class="text-right">  +0.02</td>
-												<td class="text-right">0.14%</td>
-												<td class="text-right">$13.83</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-											<tr>
-												<td>AGO</td>
-												<td>ATLAS IRON LIMITED</td>
-												<td class="text-right"><button class="btn-xs btn-primary">information</button></td>
-												<td class="text-right">-0.02</td>
-												<td class="text-right">-0.47%</td>
-												<td class="text-right">$3.11</td>
-												<td class="text-right">July - 2019</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</section>
-				
-						
 
-					
-				
+						<strong>Critical warnings found. Please review!</strong>
+
+					</div>
+
+
+					<section class="panel ">
+						<header class="panel-heading">
+							<div class="panel-actions">
+								<a href="#" class="fa fa-caret-down"></a> <a href="#"
+									class="fa fa-times"></a>
+							</div>
+
+							<h2 class="panel-title">Detailed Alerts and Notifications</h2>
+						</header>
+						<div class="panel-body">
+
+							<div class="table-responsive">
+								<table
+									class="table table-bordered table-striped table-condensed mb-none">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Alert</th>
+											<th>Status</th>
+											<th>Current value</th>
+											<th>Sector #</th>
+											<th>Time</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>pH Value too High at Sector 1</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>8.6</td>
+											<td>Sector 1</td>
+											<td>Today</td>
+											<td>Supply with Aluminium manganese-11kg<br></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Humidity Sensor expires soon</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>Expires in June</td>
+											<td>Sector 2</td>
+											<td>Today</td>
+											<td>Order online <a href="http://www.amazon.in" class="btn-xs btn-primary">Order now</a><br></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Nitrogen content low</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>65</td>
+											<td>Sector 1</td>
+											<td>Today</td>
+											<td>Supply Ammonium Nitrate- 15 kg<br></td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Soil moisture Critically low</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>77<br></td>
+											<td>Sector 2</td>
+											<td>Today<br></td>
+											<td>Start irrigation- 105 Ltr of water<br></td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>Temperature sensor not working</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>Expired today</td>
+											<td>Sector 1</td>
+											<td>Today<br></td>
+											<td>Get it online<a href="http://www.amazon.in" class="btn-xs btn-primary">Order now</a></td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>pH value high<br></td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>7.9<br></td>
+											<td>Sector 2</td>
+											<td>Yesterday<br></td>
+											<td>Done<br></td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>Soil moisture critically low<br></td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>71<br></td>
+											<td>Sector 1</td>
+											<td>Yesterday<br></td>
+											<td>Done<br></td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>Harvesting approaching</td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>Expected in 7 days</td>
+											<td>Sector 1</td>
+											<td>26-05-2016<br></td>
+											<td>harvest June 4nd week<br></td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>Strong wind</td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>110kmph<br></td>
+											<td>Sector 2</td>
+											<td>26-05-2016<br></td>
+											<td>Expected rains. Minimize irrigation in sectors 1 and 3<br></td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>Potassium content getting low<br></td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>30<br></td>
+											<td>Sector 2</td>
+											<td>25-05-2016<br></td>
+											<td>Supply with potassium Chloride-9kg<br></td>
+										</tr>
+										<tr>
+											<td>11</td>
+											<td>Heavy rain<br></td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>Neutral soil moisture</td>
+											<td>Sector 1</td>
+											<td>23-05-2016<br></td>
+											<td>Minimize irrigation for 2 days<br></td>
+										</tr>
+										<tr>
+											<td>12</td>
+											<td>Phosphoros content getting low</td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>45</td>
+											<td>Sector 1</td>
+											<td>23-05-2016</td>
+											<td>Supply with Phosphorous Trichoride- 70kg</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td>Strong wind</td>
+											<td><button class="btn-xs btn-success">information</button></td>
+											<td>90kmph</td>
+											<td>Sector 1</td>
+											<td>22-05-2016</td>
+											<td>Expects rain. Minimize irrigation in sector 1 and 2</td>
+										</tr>
+										<tr>
+											<td>14</td>
+											<td>Harvesting approaching</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>Expected in 2 weeks</td>
+											<td>Sector 2</td>
+											<td>22-05-2016</td>
+											<td>harvest June 2nd week</td>
+										</tr>
+										<tr>
+											<td>15</td>
+											<td>Soil moisture critically low</td>
+											<td><button class="btn-xs btn-danger">critical</button></td>
+											<td>69</td>
+											<td>Sector 2</td>
+											<td>21-05-2016</td>
+											<td>Start irrigation- 75 Ltr of water</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+					</section>
+
+
+
+
+
 
 				</div>
 
@@ -375,16 +423,16 @@
 			</section>
 
 
-<script src="assets/vendor/select2/select2.js"></script>
+			<script src="assets/vendor/select2/select2.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
-				
-				
-				
+
+
+
 			<!-- Vendor -->
 			<script src="assets/vendor/jquery/jquery.js"></script>
 			<script

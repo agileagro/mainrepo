@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html class="fixed">
 <head>
@@ -50,6 +50,11 @@
 
 </head>
 <body>
+<%
+		if (session.getAttribute("logged_user") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 	<section class="body">
 
 		<!-- start: header -->
@@ -116,7 +121,7 @@
 						</figure>
 						<div class="profile-info" data-lock-name="John Doe"
 							data-lock-email="johndoe@okler.com">
-							<span class="name">USERNAME</span>
+							<span class="name"><%=session.getAttribute("logged_user") %></span>
 
 						</div> <i class="fa custom-caret"></i>
 					</a>
@@ -172,6 +177,10 @@
 										class="fa fa-heart" aria-hidden="true"></i> <span>Sensor
 											Health</span>
 								</a></li>
+								<li class="nav-active"><a href="new_livestream.jsp"> <i
+										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
+											</span>
+								</a></li>
 								<li></li>
 							</ul>
 						</nav>
@@ -212,22 +221,190 @@
 				<!-- start: page -->
 				<div class="row">
 
-					<div class="alert alert-danger ">
+					<div class="alert alert-dark ">
 						<button type="button" class="close" data-dismiss="alert"
-							aria-hidden="true">x</button>
-						
-							<strong>Content Could not be loaded!</strong>
-						
+							aria-hidden="true">×</button>
+						<h3>Detailed Crop Summary
+							 <small>Updated 5 hours
+								ago</small>
+						</h3>
 					</div>
-					
-				
 
-					
-				
+
+
+
+
 
 				</div>
+				<div class="row">
+					<section class="panel ">
+						<header class="panel-heading">
+							<div class="panel-actions">
+								<a href="#" class="fa fa-caret-down"></a> <a href="#"
+									class="fa fa-times"></a>
+							</div>
 
-			<!-- End the Page content -->
+							<h2 class="panel-title">Detailed Crop Wise Report</h2>
+						</header>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table
+									class="table table-bordered table-striped table-condensed mb-none">
+									<thead>
+										<tr>
+											<th>Crop</th>
+											<th>Sector</th>
+											<th>Location</th>
+											<th>Planted On</th>
+											<th>Expected Harvest</th>
+											<th>pH Level</th>
+											<th>Nitrogen Level</th>
+											<th>Potassium Level</th>
+											<th>Phosphorous Level</th>
+											<th>Soil Moisture</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Corn</td>
+											<td>1</td>
+											<td>Gujrat</td>
+											<td>June 2016</td>
+											<td>October 2016</td>
+											<td>6.2</td>
+											<td>150 lbs</td>
+											<td>120 lbs</td>
+											<td>220 lbs</td>
+											<td>85</td>
+
+										</tr>
+										<tr>
+											<td>Corn</td>
+											<td>3</td>
+											<td>Madhya Pradesh</td>
+											<td>June 2016</td>
+											<td>October 2016</td>
+											<td>5.9</td>
+											<td>147 lbs</td>
+											<td>121 lbs</td>
+											<td>250 lbs</td>
+											<td>79</td>
+
+										</tr>
+										<tr>
+											<td>Corn</td>
+											<td>2</td>
+											<td>Gujrat</td>
+											<td>June 2016</td>
+											<td>October 2016</td>
+											<td>6.0</td>
+											<td>151 lbs</td>
+											<td>120 lbs</td>
+											<td>200 lbs</td>
+											<td>89</td>
+
+										</tr>
+										<tr>
+											<td>Strawberry</td>
+											<td>2</td>
+											<td>Kashmir</td>
+											<td>May 2016</td>
+											<td>August 2016</td>
+											<td>5.9</td>
+											<td>110 lbs</td>
+											<td>100 lbs</td>
+											<td>75 lbs</td>
+											<td>76</td>
+
+										</tr>
+										<tr>
+											<td>Wheat</td>
+											<td>1</td>
+											<td>Punjab</td>
+											<td>July 2016</td>
+											<td>August 2016</td>
+											<td>6.4</td>
+											<td>82 lbs</td>
+											<td>79 lbs</td>
+											<td>150 lbs</td>
+											<td>90</td>
+
+										</tr>
+										<tr>
+											<td>Wheat</td>
+											<td>2</td>
+											<td>Punjab</td>
+											<td>July 2016</td>
+											<td>August 2016</td>
+											<td>6.0</td>
+											<td>85 lbs</td>
+											<td>83 lbs</td>
+											<td>160 lbs</td>
+											<td>85</td>
+
+										</tr>
+										<tr>
+											<td>Potato</td>
+											<td>1</td>
+											<td>Karnataka</td>
+											<td>March 2016</td>
+											<td>June 2016</td>
+											<td>5.6</td>
+											<td>200 lbs</td>
+											<td>200 lbs</td>
+											<td>95 lbs</td>
+											<td>76</td>
+
+										</tr>
+										<tr>
+											<td>Potato</td>
+											<td>2</td>
+											<td>Karnataka</td>
+											<td>March 2016</td>
+											<td>June 2016</td>
+											<td>6.3</td>
+											<td>190 lbs</td>
+											<td>210 lbs</td>
+											<td>100 lbs</td>
+											<td>93</td>
+
+										</tr>
+										<tr>
+											<td>Onion</td>
+											<td>2</td>
+											<td>Kerala</td>
+											<td>February 2016</td>
+											<td>July 2016</td>
+											<td>5.7</td>
+											<td>110 lbs</td>
+											<td>115 lbs</td>
+											<td>190 lbs</td>
+											<td>94</td>
+
+										</tr>
+										<tr>
+											<td>Carrot</td>
+											<td>3</td>
+											<td>Tamil Nadu</td>
+											<td>February 2016</td>
+											<td>July 2016</td>
+											<td>5.4</td>
+											<td>90 lbs</td>
+											<td>90 lbs</td>
+											<td>90 lbs</td>
+											<td>86</td>
+
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!-- End the Page content -->
 
 
 
@@ -244,16 +421,16 @@
 			</section>
 
 
-<script src="assets/vendor/select2/select2.js"></script>
+			<script src="assets/vendor/select2/select2.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
-				
-				
-				
+
+
+
 			<!-- Vendor -->
 			<script src="assets/vendor/jquery/jquery.js"></script>
 			<script

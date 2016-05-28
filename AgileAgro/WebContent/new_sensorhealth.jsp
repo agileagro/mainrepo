@@ -42,6 +42,11 @@
 
 	</head>
 	<body>
+	<%
+		if (session.getAttribute("logged_user") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 		<section class="body">
 
 			<!-- start: header -->
@@ -112,7 +117,7 @@
 								<img src="http://res.cloudinary.com/ddgydqg8v/image/upload/v1445523459/user-placeholder_hvt8xv.png" alt="Joseph Doe" class="img-circle" data-lock-picture="http://res.cloudinary.com/ddgydqg8v/image/upload/v1445523459/user-placeholder_hvt8xv.png" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">USERNAME</span>
+								<span class="name"><%=session.getAttribute("logged_user") %></span>
 								
 							</div>
 			
@@ -190,6 +195,10 @@
 										
 										
 									</li>
+									<li class="nav-active"><a href="new_livestream.jsp"> <i
+										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
+											</span>
+								</a></li>
 									<li>
 									  
 								    </li>
@@ -351,7 +360,7 @@
 								<h2 class="panel-title">Detailed Sensor Health Report</h2>
 							</header>
 							<div class="panel-body">
-								<div class="table-responsive">
+							<div class="table-responsive">
 									<table class="table table-bordered table-striped table-condensed mb-none">
 										<thead>
 											<tr>
@@ -366,107 +375,108 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>AGR</td>
+												<td>AGR142</td>
 												<td>Bosch-Temperature-B2397</td>
-												<td class="text-right">$1.38</td>
+												<td class="text-right">Temperature</td>
 												<td class="text-right">Bosch</td>
-												<td class="text-right">1</td>
-												<td class="text-right">Working</td>
+												<td class="text-right">Sector 1</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
 												<td class="text-right">July - 2019</td>
 											</tr>
 											<tr>
-												<td>AAD</td>
-												<td>ARDENT LEISURE GROUP</td>
-												<td class="text-right">$1.15</td>
+												<td>AAD231</td>
+												<td>Bosch- Nitrogen-B7561</td>
+												<td class="text-right">Nitrogen</td>
 												<td class="text-right"> Siemens </td>
-												<td class="text-right">2</td>
-												<td class="text-right">$1.14</td>
-												<td class="text-right">July - 2019</td>
+												<td class="text-right">Sector 2</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">June - 2016</td>
 											</tr>
 											<tr>
-												<td>AAX</td>
-												<td>AUSENCO LIMITED</td>
-												<td class="text-right">$4.00</td>
+												<td>AAX861</td>
+												<td>Yamaha- Phosphorous-YM720</td>
+												<td class="text-right">Phosphorous</td>
 												<td class="text-right">Yamaha</td>
-												<td class="text-right">1</td>
-												<td class="text-right">$4.01</td>
-												<td class="text-right">July - 2019</td>
+												<td class="text-right">Sector 1</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">January- 2021</td>
 											</tr>
 											<tr>
-												<td>ABC</td>
-												<td>ADELAIDE BRIGHTON LIMITED</td>
-												<td class="text-right">$3.00</td>
-												<td class="text-right">  +0.06</td>
-												<td class="text-right">2.04%</td>
-												<td class="text-right">$2.98</td>
-												<td class="text-right">July - 2019</td>
+												<td>ABC530</td>
+												<td>Siemens- Soil Moisture-SM205</td>
+												<td class="text-right">Soil Moisture</td>
+												<td class="text-right">Siemens</td>
+												<td class="text-right">Sector&nbsp;3</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">September - 2021</td>
 											</tr>
 											<tr>
-												<td>ABP</td>
-												<td>ABACUS PROPERTY GROUP</td>
-												<td class="text-right">$1.91</td>
-												<td class="text-right">0.00</td>
-												<td class="text-right">0.00%</td>
-												<td class="text-right">$1.92</td>
-												<td class="text-right">July - 2019</td>
+												<td>ABP173</td>
+												<td>Bosch- Temperature-B2398</td>
+												<td class="text-right">Temperature</td>
+												<td class="text-right">Bosch</td>
+												<td class="text-right">Sector 2</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">May - 2022</td>
 											</tr>
 											<tr>
-												<td>ABY</td>
-												<td>ADITYA BIRLA MINERALS LIMITED</td>
-												<td class="text-right">$0.77</td>
-												<td class="text-right">  +0.02</td>
-												<td class="text-right">2.00%</td>
-												<td class="text-right">$0.76</td>
-												<td class="text-right">July - 2019</td>
+												<td>ABY942</td>
+												<td>Siemens- Humidity-SH132</td>
+												<td class="text-right">Humidity</td>
+												<td class="text-right">Siemens</td>
+												<td class="text-right">Sector 2</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">June - 2016</td>
 											</tr>
 											<tr>
-												<td>ACR</td>
-												<td>ACRUX LIMITED</td>
-												<td class="text-right">$3.71</td>
-												<td class="text-right">  +0.01</td>
-												<td class="text-right">0.14%</td>
-												<td class="text-right">$3.70</td>
-												<td class="text-right">July - 2019</td>
+												<td>ACR610</td>
+												<td>Yamaha- Potassium-YP870</td>
+												<td class="text-right">Potassium</td>
+												<td class="text-right">Yamaha</td>
+												<td class="text-right">Sector 3</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">December - 2019</td>
 											</tr>
 											<tr>
-												<td>ADU</td>
-												<td>ADAMUS RESOURCES LIMITED</td>
-												<td class="text-right">$0.72</td>
-												<td class="text-right">0.00</td>
-												<td class="text-right">0.00%</td>
-												<td class="text-right">$0.73</td>
-												<td class="text-right">July - 2019</td>
+												<td>ADU616</td>
+												<td>Yamaha- Light Intensity-YL196</td>
+												<td class="text-right">Light Intensity</td>
+												<td class="text-right">Yamaha</td>
+												<td class="text-right">Sector 2</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">February - 2023</td>
 											</tr>
 											<tr>
-												<td>AGG</td>
-												<td>ANGLOGOLD ASHANTI LIMITED</td>
-												<td class="text-right">$7.81</td>
-												<td class="text-right">-0.22</td>
-												<td class="text-right">-2.74%</td>
-												<td class="text-right">$7.82</td>
-												<td class="text-right">July - 2019</td>
+												<td>AGG503</td>
+												<td>Bosch- Humidity- BH0898</td>
+												<td class="text-right">Humidity</td>
+												<td class="text-right">Bosch</td>
+												<td class="text-right">Sector 1</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">December- 2022</td>
 											</tr>
 											<tr>
-												<td>AGK</td>
-												<td>AGL ENERGY LIMITED</td>
-												<td class="text-right">$13.82</td>
-												<td class="text-right">  +0.02</td>
-												<td class="text-right">0.14%</td>
-												<td class="text-right">$13.83</td>
-												<td class="text-right">July - 2019</td>
+												<td>AGK645</td>
+												<td>Siemens- Temperature- ST419</td>
+												<td class="text-right">Temperature</td>
+												<td class="text-right">Siemens</td>
+												<td class="text-right">Sector 1</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">October - 2021</td>
 											</tr>
 											<tr>
-												<td>AGO</td>
-												<td>ATLAS IRON LIMITED</td>
-												<td class="text-right">$3.17</td>
-												<td class="text-right">-0.02</td>
-												<td class="text-right">-0.47%</td>
-												<td class="text-right">$3.11</td>
-												<td class="text-right">July - 2019</td>
+												<td>AGO396</td>
+												<td>Yamaha- Light Intensity-YL197</td>
+												<td class="text-right">Light Intensity</td>
+												<td class="text-right">Yamaha</td>
+												<td class="text-right">Sector 3</td>
+												<td class="text-right"><button class="btn-xs btn-success">working</button></td>
+												<td class="text-right">October - 2019</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
+							
 							</div>
 						</section>
 				</div>

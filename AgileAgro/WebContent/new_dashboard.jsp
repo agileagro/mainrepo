@@ -92,6 +92,11 @@
     </script>
 	</head>
 	<body>
+	<%
+		if (session.getAttribute("logged_user") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 		<section class="body">
 
 			<!-- start: header -->
@@ -162,7 +167,7 @@
 								<img src="http://res.cloudinary.com/ddgydqg8v/image/upload/v1445523459/user-placeholder_hvt8xv.png" alt="Joseph Doe" class="img-circle" data-lock-picture="http://res.cloudinary.com/ddgydqg8v/image/upload/v1445523459/user-placeholder_hvt8xv.png" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">USERNAME</span>
+								<span class="name"><%=session.getAttribute("logged_user") %></span>
 								
 							</div>
 			
@@ -240,6 +245,10 @@
 										
 										
 									</li>
+									<li class="nav-active"><a href="new_livestream.jsp"> <i
+										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
+											</span>
+								</a></li>
 									<li>
 									  
 								    </li>
@@ -283,7 +292,7 @@
 					</header>
 
 					<!-- start: page -->
-					
+								
 							<div class="row">
 							<div class="col-md-6 col-lg-6 col-xl-3">
 								<section class="panel panel-featured-secondary appear-animation bounceIn appear-animation-visible">

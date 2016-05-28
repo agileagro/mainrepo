@@ -50,6 +50,11 @@
 
 </head>
 <body>
+<%
+		if (session.getAttribute("logged_user") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 	<section class="body">
 
 		<!-- start: header -->
@@ -116,7 +121,7 @@
 						</figure>
 						<div class="profile-info" data-lock-name="John Doe"
 							data-lock-email="johndoe@okler.com">
-							<span class="name">USERNAME</span>
+							<span class="name"><%=session.getAttribute("logged_user") %></span>
 
 						</div> <i class="fa custom-caret"></i>
 					</a>
@@ -172,6 +177,10 @@
 										class="fa fa-heart" aria-hidden="true"></i> <span>Sensor
 											Health</span>
 								</a></li>
+								<li class="nav-active"><a href="new_livestream.jsp"> <i
+										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
+											</span>
+								</a></li>
 								<li></li>
 							</ul>
 						</nav>
@@ -212,20 +221,72 @@
 				<!-- start: page -->
 				<div class="row">
 
-					<div class="alert alert-danger ">
+					<div class="alert alert-info ">
 						<button type="button" class="close" data-dismiss="alert"
 							aria-hidden="true">x</button>
 						
-							<strong>Content Could not be loaded!</strong>
+							<strong>If you need to update your existing knowledge base, you can request for the same here.</strong>
 						
 					</div>
-					
+					<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
+						
+										<h2 class="panel-title">Request for a Knowledge base change</h2>
+									</header>
+									<div class="panel-body">
+										<form  class="form-horizontal form-bordered" method="get">
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">Confirm instance ID</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="inputDefault" required>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">Remarks</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="inputDefault" required>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">Other reasons for change</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="inputDefault" required>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDefault">Please confirm before submitting</label>
+												<div class="col-md-6">
+													<input type="submit" onclick="displayalert();"  class="btn btn-primary" id="">
+												</div>
+											</div>
+						
+						
+										
+											
+						
+										</form>
+									</div>
+								</section>
 				
 
 					
 				
 
 				</div>
+				
+				
+				<script type="text/javascript">
+				function displayalert(){
+					
+					alert("Your request has been sent to the administrator!");
+				}
+				
+				
+				</script>
 
 			<!-- End the Page content -->
 

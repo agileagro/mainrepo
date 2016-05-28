@@ -19,6 +19,9 @@
   </head>
 
   <body style="background-image:url('http://res.cloudinary.com/ddgydqg8v/image/upload/v1463040803/agile_agro_main_back.jpg');">
+    <%
+		session.invalidate();
+	%>
     <div class="">
       <a class="hiddenanchor" id="toregister"></a>
       <a class="hiddenanchor" id="tologin"></a>

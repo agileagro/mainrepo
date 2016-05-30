@@ -195,7 +195,7 @@
 										
 										
 									</li>
-									<li class="nav-active"><a href="new_livestream.jsp"> <i
+									<li class="nav-main"><a href="new_livestream.jsp"> <i
 										class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i> <span>Live Stream Data
 											</span>
 								</a></li>

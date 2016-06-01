@@ -230,7 +230,7 @@
 					<section class="panel ">
 						<header class="panel-heading">
 							<div class="panel-actions">
-								<a href="#" class="fa fa-spin fa-caret-down"></a> <a href="#"
+								<a href="#" class="fa fa-caret-down"></a> <a href="#"
 									class="fa fa-times"></a>
 							</div>
 
@@ -238,13 +238,17 @@
 						</header>
 						<div class="panel-body">
 						<!-- start: page -->
-				<iframe src="http://10.206.133.200/sample/gauge.php" width="1400" height="250">
+				<iframe src="http://10.206.155.184/sample/gauge.php" width="1195" height="250">
    
 				</iframe> 
 						
 						</div>
 					</section>
 				</div>
+				
+				
+				
+				
 
 				<!-- End the Page content -->
 

@@ -45,7 +45,170 @@
 
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
+<!-- For the gauges -->
+<script src="lib/3/amcharts.js"></script>
+<script src="lib/3/gauge.js"></script>
+<script src="lib/3/patterns.js"></script>
 
+
+<!-- Code for guages -->
+<script type="text/javascript">
+   var gaugeChart = AmCharts.makeChart("chartdiv", {
+		"type" : "gauge",
+		"faceBorderAlpha": 1,
+		"fontSize": 17,
+		"theme" : "default",
+		"axes" : [ {
+			"axisThickness" : 1,
+			"axisAlpha" : 0.2,
+			"tickAlpha" : 0.2,
+			"valueInterval" : 10,
+			"bands" : [ {
+				"color" : "#84b761",
+				"endValue" : 30,
+				"startValue" : 0
+			}, {
+				"color" : "#fdd400",
+				"endValue" : 45,
+				"startValue" : 30
+			}, {
+				"color" : "#cc4748",
+				"endValue" : 60,
+				"innerRadius" : "95%",
+				"startValue" : 45
+			} ],
+			"bottomText" : "0 C",
+			"bottomTextYOffset" : -20,
+			"endValue" : 60
+		} ],
+		"arrows" : [ {} ],
+		"export" : {
+			"enabled" : true
+		}
+	});
+
+	setInterval(randomValue, 1000);
+
+	// set random value
+	function randomValue() {
+		var value = Math.round(20 + Math.random() * 30);
+		if (gaugeChart) {
+			if (gaugeChart.arrows) {
+				if (gaugeChart.arrows[0]) {
+					if (gaugeChart.arrows[0].setValue) {
+						gaugeChart.arrows[0].setValue(value);
+						gaugeChart.axes[0].setBottomText(value + " C");
+					}
+				}
+			}
+		}
+	}
+  
+	var gaugeChart1 = AmCharts.makeChart("chartdiv1", {
+		"type" : "gauge",
+		"faceBorderAlpha": 1,
+		"fontSize": 15,
+		"theme" : "default",
+		"axes" : [ {
+			"axisThickness" : 1,
+			"axisAlpha" : 0.2,
+			"tickAlpha" : 0.2,
+			"valueInterval" : 10,
+			"bands" : [ {
+				"color" : "#84b761",
+				"endValue" : 45,
+				"startValue" : 20
+			}, {
+				"color" : "#fdd400",
+				"endValue" : 60,
+				"startValue" : 45
+			}, {
+				"color" : "#cc4748",
+				"endValue" : 100,
+				"innerRadius" : "95%",
+				"startValue" : 60
+			} ],
+			"bottomText" : "0 ",
+			"bottomTextYOffset" : -20,
+			"endValue" : 100
+		} ],
+		"arrows" : [ {} ],
+		"export" : {
+			"enabled" : true
+		}
+	});
+
+	setInterval(randomValue1, 1000);
+
+	// set random value
+	function randomValue1() {
+		var value = Math.round(50 + Math.random() * 10);
+		if (gaugeChart1) {
+			if (gaugeChart1.arrows) {
+				if (gaugeChart1.arrows[0]) {
+					if (gaugeChart1.arrows[0].setValue) {
+						gaugeChart1.arrows[0].setValue(value);
+						gaugeChart1.axes[0].setBottomText("Humidity");
+					}
+				}
+			}
+		}
+	}
+	
+	 var gaugeChart2 = AmCharts.makeChart("chartdiv2", {
+			"type" : "gauge",
+			"faceBorderAlpha": 1,
+			"fontSize": 15,
+			"theme" : "default",
+			"axes" : [ {
+				"axisThickness" : 1,
+				"axisAlpha" : 0.2,
+				"tickAlpha" : 0.2,
+				"valueInterval" : 10,
+				"bands" : [ {
+					"color" : "#84b761",
+					"endValue" : 100,
+					"startValue" : 65
+				}, {
+					"color" : "#fdd400",
+					"endValue" : 65,
+					"startValue" :50 
+				}, {
+					"color" : "#cc4748",
+					"endValue" : 50,
+					"innerRadius" : "95%",
+					"startValue" : 0
+				} ],
+				"bottomText" : "0 C",
+				"bottomTextYOffset" : -20,
+				"endValue" : 100
+			} ],
+			"arrows" : [ {} ],
+			"export" : {
+				"enabled" : true
+			}
+		});
+
+		setInterval(randomValue2, 1000);
+
+		// set random value
+		function randomValue2() {
+			var value = Math.round(35 + Math.random() * 20);
+			if (gaugeChart2) {
+				if (gaugeChart2.arrows) {
+					if (gaugeChart2.arrows[0]) {
+						if (gaugeChart2.arrows[0].setValue) {
+							gaugeChart2.arrows[0].setValue(value);
+							gaugeChart2.axes[0].setBottomText(value + " %");
+						}
+					}
+				}
+			}
+		}
+	
+	
+	
+</script>
 
 
 </head>
@@ -89,7 +252,7 @@
 					</a>
 
 						<div class="dropdown-menu notification-menu">
-							<div class="notification-title">Agro Alerts</div>
+							<div class="notification-title">Live stream</div>
 
 							<div class="content">
 								<ul>
@@ -213,7 +376,7 @@
 
 			<section role="main" class="content-body">
 				<header class="page-header">
-					<h2>Agro Alerts</h2>
+					<h2>Live Stream</h2>
 
 					<div class="right-wrapper pull-right"></div>
 				</header>
@@ -234,13 +397,58 @@
 									class="fa fa-times"></a>
 							</div>
 
-							<h2 class="panel-title"><a class="fa fa-spin fa-circle-o-notch"></a>&nbsp;&nbsp; Streaming Live from Sensors Now!</h2>
+							<h2 class="panel-title"><i class="fa fa-spin fa-circle-o-notch"></i>&nbsp;&nbsp; Streaming Live from Sensors Now!</h2>
 						</header>
-						<div class="panel-body">
-						<!-- start: page -->
-				<iframe src="http://10.206.155.184/sample/gauge.php" width="1195" height="250">
-   
-				</iframe> 
+						<div class="panel-body" style="background-color:#f6f6f6">
+						<!-- Enable 3 sensors here -->
+						
+						<div class="row">
+							<div class="col-md-4">
+								<section class="panel panel-tertiary" >
+								<header class="panel-heading">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title"><i class="fa fa-spin fa-circle-o-notch"></i>&nbsp;&nbsp;Temperature - Live</h2>
+								</header>
+								<div class="panel-body">
+									<div id="chartdiv" style="width: 100%; height: 250px; background-color: #FFFFFF;"></div>
+								</div>
+							</section>
+							</div>
+						<div class="col-md-4">
+						
+						<section class="panel panel-tertiary" >
+								<header class="panel-heading">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title"><i class="fa fa-spin fa-circle-o-notch"></i>&nbsp;&nbsp;Humidity - Live</h2>
+								</header>
+								<div class="panel-body">
+									<div id="chartdiv1" style="width: 100%; height: 250px; background-color: #FFFFFF;"></div>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4">
+						<section class="panel panel-tertiary" >
+								<header class="panel-heading">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
+									</div>
+
+									<h2 class="panel-title"><i class="fa fa-spin fa-circle-o-notch"></i>&nbsp;&nbsp;Moisture - Live</h2>
+								</header>
+								<div class="panel-body">
+									<div id="chartdiv2" style="width: 100%; height: 250px; background-color: #FFFFFF;"></div>
+								</div>
+						</section>
+						</div>
 						
 						</div>
 					</section>

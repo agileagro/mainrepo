@@ -39,57 +39,119 @@
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
 
 		
-		 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<!-- For the gauges -->
+   		<script src="lib/3/amcharts.js"></script>
+		<script src="lib/3/gauge.js"></script>
+		<script src="lib/3/patterns.js"></script>
+	
+	
    <script type="text/javascript">
-      google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+   var gaugeChart = AmCharts.makeChart("chartdiv", {
+		"type" : "gauge",
+		"faceBorderAlpha": 1,
+		"fontSize": 15,
+		"theme" : "default",
+		"axes" : [ {
+			"axisThickness" : 1,
+			"axisAlpha" : 0.2,
+			"tickAlpha" : 0.2,
+			"valueInterval" : 10,
+			"bands" : [ {
+				"color" : "#84b761",
+				"endValue" : 30,
+				"startValue" : 0
+			}, {
+				"color" : "#fdd400",
+				"endValue" : 45,
+				"startValue" : 30
+			}, {
+				"color" : "#cc4748",
+				"endValue" : 60,
+				"innerRadius" : "95%",
+				"startValue" : 45
+			} ],
+			"bottomText" : "0 C",
+			"bottomTextYOffset" : -20,
+			"endValue" : 60
+		} ],
+		"arrows" : [ {} ],
+		"export" : {
+			"enabled" : true
+		}
+	});
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['pH Level', 8.5]
-        ]);
+	setInterval(randomValue, 700);
 
-        var options = {
-		 max: 15,
-          width: 450, height: 180,
-          redFrom: 8, redTo: 14,
-          yellowFrom:5, yellowTo: 8,
-          minorTicks: 2
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-		
-        chart.draw(data, options);
-		
-        
-      }
+	// set random value
+	function randomValue() {
+		var value = Math.round(28 + Math.random() * 2);
+		if (gaugeChart) {
+			if (gaugeChart.arrows) {
+				if (gaugeChart.arrows[0]) {
+					if (gaugeChart.arrows[0].setValue) {
+						gaugeChart.arrows[0].setValue(value);
+						gaugeChart.axes[0].setBottomText(value + " C");
+					}
+				}
+			}
+		}
+	}
     </script>
-	<script type="text/javascript">
+    <script type="text/javascript">
+	var gaugeChart1 = AmCharts.makeChart("chartdiv1", {
+		"type" : "gauge",
+		"faceBorderAlpha": 1,
+		"fontSize": 15,
+		"theme" : "default",
+		"axes" : [ {
+			"axisThickness" : 1,
+			"axisAlpha" : 0.2,
+			"tickAlpha" : 0.2,
+			"valueInterval" : 2,
+			"bands" : [ {
+				"color" : "#84b761",
+				"endValue" : 8,
+				"startValue" : 6
+			}, {
+				"color" : "#fdd400",
+				"endValue" : 1,
+				"startValue" : 1
+			}, {
+				"color" : "#cc4748",
+				"endValue" : 1,
+				"innerRadius" : "95%",
+				"startValue" : 1
+			} ],
+			"bottomText" : "0 ",
+			"bottomTextYOffset" : -20,
+			"endValue" : 14
+		} ],
+		"arrows" : [ {} ],
+		"export" : {
+			"enabled" : true
+		}
+	});
 
-      google.charts.setOnLoadCallback(drawChart1);
-      function drawChart1() {
+	setInterval(randomValue1, 2000);
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Temperature', 23]
-        ]);
-
-        var options = {
-		 max: 60,
-          width: 450, height: 180,
-          redFrom: 45, redTo: 60,
-          yellowFrom:30, yellowTo: 44,
-          minorTicks: 2
-        };
-
-        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
-		
-        chart1.draw(data, options);
-		
-        
-      }
-    </script>
+	// set random value
+	function randomValue1() {
+		var value = Math.round(7 + Math.random() * 1);
+		if (gaugeChart1) {
+			if (gaugeChart1.arrows) {
+				if (gaugeChart1.arrows[0]) {
+					if (gaugeChart1.arrows[0].setValue) {
+						gaugeChart1.arrows[0].setValue(value);
+						gaugeChart1.axes[0].setBottomText("pH");
+					}
+				}
+			}
+		}
+	}
+</script>
+    
+    
+    
 	</head>
 	<body>
 	<%
@@ -533,14 +595,12 @@
 											<div class="panel-body">
 												<div class="row ">
 													<div class="col-md-6">
-													<div class="guage-chart">
-														<div id="chart_div" style="width: 400px; height: 120px; margin-left:50px;"></div>
-														<br><br><br><h4>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Aggreagated pH value</h4>
-													</div>
+													<div id="chartdiv" style="width: 100%; height: 200px; background-color: #FFFFFF;"></div>
+													<h4>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature</h4>
 													</div>
 													<div class="col-md-6">
-														<div id="chart_div1" style="width: 400px; height: 120px; margin-left:50px;"></div>
-														<br><br><br><h4>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature</h4>
+														<div id="chartdiv1" style="width: 100%; height: 200px; background-color: #FFFFFF;"></div>
+														<h4>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pH Level</h4>
 													</div>
 												</div>
 											</div>

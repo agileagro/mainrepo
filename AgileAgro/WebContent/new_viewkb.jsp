@@ -7,7 +7,7 @@
 <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Alerts | AgileAgro</title>
+<title>Knowledge Base | AgileAgro</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
@@ -213,7 +213,7 @@
 
 			<section role="main" class="content-body">
 				<header class="page-header">
-					<h2>Agro Alerts</h2>
+					<h2>Knowledge Base</h2>
 
 					<div class="right-wrapper pull-right"></div>
 				</header>

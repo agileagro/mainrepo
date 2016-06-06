@@ -7,7 +7,7 @@
 <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Alerts | AgileAgro</title>
+<title>Sector Wise Reports | AgileAgro</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"

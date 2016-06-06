@@ -476,7 +476,7 @@
 												<div class="row text-center">
 													<div class="col-md-6">
 														<div class="circular-bar">
-															<div class="circular-bar-chart" data-percent='85' data-plugin-options='{ "barColor": "#0088CC", "delay": 1200 }'>
+															<div class="circular-bar-chart" data-percent='85' data-plugin-options='{ "barColor": "#00AD3D", "delay": 1200 }'>
 																<strong>Nitrogen</strong>
 																<label><span class="percent">85</span>%</label>
 															</div>
@@ -484,7 +484,7 @@
 													</div>
 													<div class="col-md-6">
 														<div class="circular-bar">
-															<div class="circular-bar-chart" data-percent='60' data-plugin-options='{ "barColor": "#2BAAB1", "delay": 600 }'>
+															<div class="circular-bar-chart" data-percent='60' data-plugin-options='{ "barColor": "#00BF89", "delay": 600 }'>
 																<strong>Pottasium</strong>
 																<label><span class="percent">60</span>%</label>
 															</div>
@@ -516,7 +516,7 @@
 												<div class="row text-center">
 													<div class="col-md-6">
 														<div class="circular-bar">
-															<div class="circular-bar-chart" data-percent='85' data-plugin-options='{ "barColor": "#0088CC", "delay": 300 }'>
+															<div class="circular-bar-chart" data-percent='85' data-plugin-options='{ "barColor": "#FFA538", "delay": 300 }'>
 																<strong>Light intensity</strong>
 																<label><span class="percent">85</span> Lux</label>
 															</div>
@@ -524,7 +524,7 @@
 													</div>
 													<div class="col-md-6">
 														<div class="circular-bar">
-															<div class="circular-bar-chart" data-percent='60' data-plugin-options='{ "barColor": "#2BAAB1", "delay": 600 }'>
+															<div class="circular-bar-chart" data-percent='60' data-plugin-options='{ "barColor": "#FF8F66", "delay": 600 }'>
 																<strong>Phosphorous</strong>
 																<label><span class="percent">60</span>%</label>
 															</div>

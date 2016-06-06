@@ -7,7 +7,7 @@
 <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>Alerts | AgileAgro</title>
+<title>LiveStream | AgileAgro</title>
 
 <!-- Mobile Metas -->
 <meta name="viewport"
@@ -50,9 +50,44 @@
 <script src="lib/3/gauge.js"></script>
 <script src="lib/3/patterns.js"></script>
 
+<!-- Load Jquery first -->
+<script src="assets/vendor/jquery/jquery.js"></script>
 
 <!-- Code for guages -->
 <script type="text/javascript">
+//--for ajax
+var value1;
+var value2;
+var value3;
+function update() {
+  $(function () 
+  {
+    $.ajax({                                      
+      url: 'http://139.59.2.47/agile_agro/database.php',                     
+      data: "",                       
+      dataType: 'json',                 
+      success: function(data)         
+      {
+         value1 = data[0];              
+         value2 = data[1];  
+		 value3 = data[2];  		
+        //$('#output').html("<b>humidity: </b>"+value1+"<b> temperature: </b>"+value2+"<b> soil Moisture: </b>"+value3);  
+        
+      } 
+    });
+  
+  }); 
+ }
+ $(document).ready(update); // Call on page load
+ //setInterval(update, 2000);
+  
+  
+  
+
+
+
+
+
    var gaugeChart = AmCharts.makeChart("chartdiv", {
 		"type" : "gauge",
 		"faceBorderAlpha": 1,
@@ -86,12 +121,14 @@
 			"enabled" : true
 		}
 	});
-
 	setInterval(randomValue, 1000);
 
 	// set random value
 	function randomValue() {
 		var value = Math.round(20 + Math.random() * 30);
+		//update();
+		var value = value1;
+		
 		if (gaugeChart) {
 			if (gaugeChart.arrows) {
 				if (gaugeChart.arrows[0]) {
@@ -109,6 +146,7 @@
 		"faceBorderAlpha": 1,
 		"fontSize": 15,
 		"theme" : "default",
+		
 		"axes" : [ {
 			"axisThickness" : 1,
 			"axisAlpha" : 0.2,
@@ -142,12 +180,13 @@
 
 	// set random value
 	function randomValue1() {
-		var value = Math.round(50 + Math.random() * 10);
+		var value1 = Math.round(50 + Math.random() * 10);
+		//var value1 = value2;
 		if (gaugeChart1) {
 			if (gaugeChart1.arrows) {
 				if (gaugeChart1.arrows[0]) {
 					if (gaugeChart1.arrows[0].setValue) {
-						gaugeChart1.arrows[0].setValue(value);
+						gaugeChart1.arrows[0].setValue(value1);
 						gaugeChart1.axes[0].setBottomText("Humidity");
 					}
 				}
@@ -198,7 +237,7 @@
 				if (gaugeChart2.arrows) {
 					if (gaugeChart2.arrows[0]) {
 						if (gaugeChart2.arrows[0].setValue) {
-							gaugeChart2.arrows[0].setValue(value);
+							gaugeChart2.arrows[0].setValue(value3);
 							gaugeChart2.axes[0].setBottomText(value + " %");
 						}
 					}

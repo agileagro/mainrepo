@@ -1,0 +1,75 @@
+Category,Level1,Level2,Level3,Last Updated 1/6/2016,,GovXFer,State,Local,Total
+Sickness and disability,Corn,Sickness and disability,,0,,0,0,0,0
+Special Benefits,Corn,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Corn,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Corn,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Corn,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Corn,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Corn,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Corn,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Corn,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Corn,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Corn,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Corn,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Corn,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+Special Benefits,Strawberry,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Strawberry,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Strawberry,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Strawberry,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Strawberry,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Strawberry,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Strawberry,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Strawberry,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Strawberry,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Strawberry,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Strawberry,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Strawberry,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+Special Benefits,Wheat,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Wheat,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Wheat,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Wheat,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Wheat,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Wheat,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Wheat,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Wheat,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Wheat,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Wheat,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Wheat,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Wheat,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+Special Benefits,Potato,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Potato,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Potato,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Potato,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Potato,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Potato,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Potato,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Potato,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Potato,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Potato,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Potato,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Potato,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+Special Benefits,Onion,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Onion,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Onion,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Onion,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Onion,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Onion,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Onion,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Onion,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Onion,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Onion,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Onion,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Onion,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+Special Benefits,Carrot,Crop Details,Min_Temperature -- 22°C ,54.561,b,,,,0.38
+Foreign Service Retirement and Disability Fund,Carrot,Crop Details,Max_Temperature -- 25°C ,54.561,b,,,,0.893
+Armed Forces Retirement Home,Carrot,Crop Details,Soil_Moisture- warm -- 50,54.561,b,,,,0.083
+Military Retirement Fund,Carrot,Crop Details,Soil_Moisture-cool -- 80,54.561,c,,,,54.561
+"Reemployed Annuitants Salary Offset, Civil Service Retirement and Disability Fund",Carrot,Crop Details,Nitrogen -- 153,54.561,b,,,,0.052
+Civil Service Retirement and Disability Fund,Carrot,Crop Details,Potassium -- 125,54.561,b,,,,0.105
+Civil Service Retirement and Disability Fund,Carrot,Crop Details,Phosphorus -- 266,54.561,b,,,,83.099
+Employees Life Insurance Fund,Carrot,Crop Details,Soil Type -- sandy loam,54.561,b,,,,2.075
+Judicial Officers' Retirement Fund,Carrot,Crop Details,Min_PH -- 5.8,54.561,b,,,,0.059
+"Reimbursement for Program Expenses, Federal Retirement Thrift Investment Board",Carrot,Crop Details,Max_PH -- 6.8,54.561,b,,,,0.146
+Program Expenses,Carrot,Crop Details,Max_Light_Intensity -- 70 lux,54.561,b,,,,0.146
+Payments to Social Security Trust Funds,Carrot,Crop Details,Min_Light_Intensity -- 110 lux,54.561,b,,,,61.661
+,,Level2,Level3,,,,,,

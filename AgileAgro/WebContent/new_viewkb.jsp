@@ -46,6 +46,31 @@
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
 
+<!-- We use google fonts for many of the examples, but they are not necessary -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Raleway:600,400,200' rel='stylesheet' type='text/css'>
+
+    <!-- Test container style sheets -->
+    <link rel="stylesheet" href="styles/examples.css">
+
+    <!-- Vizuly specific style sheets -->
+    <link rel="stylesheet" href="lib/styles/vizuly.css">
+    <link rel="stylesheet" href="lib/styles/vizuly_weightedtree.css">
+
+    <!-- Supporting test container files:  Vizuly does NOT rely on these -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="lib/styles/cssmenu.css">
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/cssmenu.js"></script>
+
+    <!-- D3.js ... of course! -->
+    <script src="lib/d3.min.js"></script>
+
+    <script src="lib/vizuly_core.min.js"></script>
+	<script src="lib/vizuly_weightedtree.min.js"></script>
+
+    <script src="weightedtree_test.js"></script>
+
 
 
 </head>
@@ -222,131 +247,12 @@
 				<div class="row">
 
 					<h3>Available Knowledge Base for this instance</h3><hr>
-					<div class="table-responsive">
-						<table
-							 class="table table-bordered table-striped table-condensed mb-none">
-							<tbody>
-								<tr>
-									<th width="98">Crop_Name</th>
-									<th width="147">Min_Temperature</th>
-									<th width="130">Max_Temperature</th>
-									<th width="106">Soil_Moisture- warm,<br /> dry climate
-									</th>
-									<th width="106">Soil_Moisture-&nbsp; cool, humid<br />
-										climate
-									</th>
-									<th width="103">Nitrogen(lb/ac)</th>
-									<th width="118">Potassium(lb/ac)</th>
-									<th width="90">Phosphorus</th>
-									<th width="190">Soil Type</th>
-									<th width="64">Min_PH</th>
-									<th width="64">Max_PH</th>
-									<th width="64">Weather</th>
-									<th width="144">Min_Light_Intensity</th>
-							
-								</tr>
-								<tr>
-									<td>Corn</td>
-									<td>22&deg;C&nbsp;</td>
-									<td>25&deg;C&nbsp;</td>
-									<td>50</td>
-									<td>80</td>
-									<td>153</td>
-									<td>125</td>
-									<td>266</td>
-									<td>sandy loam</td>
-									<td>5.8</td>
-									<td>6.8</td>
-									<td>70lux</td>
-									<td>110lux</td>
-								</tr>
-								<tr>
-									<td>Strawberry</td>
-									<td>20&deg;C&nbsp;</td>
-									<td>29&deg;C&nbsp;</td>
-									<td>20</td>
-									<td>30</td>
-									<td>108</td>
-									<td>110</td>
-									<td>70</td>
-									<td>acidic soil</td>
-									<td>5.7</td>
-									<td>6.5</td>
-									<td>32Lux</td>
-									<td>130Lux</td>
-								</tr>
-								<tr>
-									<td>Wheat</td>
-									<td>15&deg;C&nbsp;</td>
-									<td>25&deg;C&nbsp;</td>
-									<td>50</td>
-									<td>55</td>
-									<td>85</td>
-									<td>80</td>
-									<td>162</td>
-									<td>light clay or heavy loam</td>
-									<td>6</td>
-									<td>6.5</td>
-									<td>110Lux</td>
-									<td>115Lux</td>
-								</tr>
-								<tr>
-									<td>Potato</td>
-									<td>15&deg;C&nbsp;</td>
-									<td>20&deg;C&nbsp;</td>
-									<td>30</td>
-									<td>50</td>
-									<td>270</td>
-									<td>220</td>
-									<td>100</td>
-									<td>drained soil</td>
-									<td>5.5</td>
-									<td>7</td>
-									<td>30Lux</td>
-									<td>70Lux</td>
-								</tr>
-								<tr>
-									<td>Onion</td>
-									<td>20&deg;C&nbsp;</td>
-									<td>25&deg;C&nbsp;</td>
-									<td>45</td>
-									<td>65</td>
-									<td>134</td>
-									<td>121</td>
-									<td>209</td>
-									<td>loamy</td>
-									<td>5.5</td>
-									<td>6.5</td>
-									<td>300lux</td>
-									<td>400lux</td>
-								</tr>
-								<tr>
-									<td>Carrot</td>
-									<td>15&deg;C&nbsp;</td>
-									<td>18&deg;C&nbsp;</td>
-									<td>55</td>
-									<td>65</td>
-									<td>20</td>
-									<td>100</td>
-									<td>100</td>
-									<td>drained soil</td>
-									<td>5.2</td>
-									<td>5.7</td>
-									<td>100lux</td>
-									<td>140lux</td>
-								</tr>
-							</tbody>
-						</table>
+					
+					
+					<iframe src="WeightedtreeTest.html" scrolling="yes" style="border:none;width:100%;height:900px" ></iframe>
 
 
-
-					</div>
-
-
-
-
-
-				</div>
+</div>
 
 				<!-- End the Page content -->
 
@@ -363,8 +269,7 @@
 					</div>
 				</aside>
 			</section>
-
-
+			
 			<script src="assets/vendor/select2/select2.js"></script>
 			<script
 				src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
